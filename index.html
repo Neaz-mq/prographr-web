@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="https://prographr.vercel.app/_next/static/media/icon.87854914.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prographr</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Keyframes for scrolling animation */
+        @keyframes scrollImages {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <div class="hello">
         <div class="left">
             <div class="background">
-                  <div class="contents">
+                <div class="contents">
                     <div>
-                        <img src="./img/Prographr Logo.svg" alt="" style="width: 28%; max-width: 100%; height: auto;"> 
-                      </div>
-                      <div>
+                        <img src="./img/Prographr Logo.svg" alt="" style="width: 28%; max-width: 100%; height: auto;">
+                    </div>
+                    <div>
                         <h1 style="color: #ECEEF9; margin-top: 70px; font-size: 36px;">We are coming soon .</h1>
-                     </div>  
-                     
-                     <div>
-                        <h4 style="color: #ECEEF9; margin-top: 70px; font-weight: 200; ">We are providing following services:</h4>
-                     </div>
-                     <div class="box-container">
+                    </div>
+
+                    <div>
+                        <h4 style="color: #ECEEF9; margin-top: 70px; font-weight: 200; ">We are providing following
+                            services:</h4>
+                    </div>
+                    <div class="box-container">
                         <!-- First row -->
                         <div class="row">
-                            <h5 style="color: #ECEEF9;" >Website Design</h5>
-                            <h5 style="color: #ECEEF9;" >Illustration</h5>
-                            <h5 style="color: #ECEEF9;" >Brochure Design</h5>
-                            <h5 style="color: #ECEEF9;" >Infographic Design</h5>
+                            <h5 style="color: #ECEEF9;">Website Design</h5>
+                            <h5 style="color: #ECEEF9;">Illustration</h5>
+                            <h5 style="color: #ECEEF9;">Brochure Design</h5>
+                            <h5 style="color: #ECEEF9;">Infographic Design</h5>
                         </div>
                         <!-- Second row -->
                         <div class="row">
-                            <h5 style="color: #ECEEF9;" >Website Development</h5>
-                            <h5 style="color: #ECEEF9;" >Logo and Branding Design</h5>
+                            <h5 style="color: #ECEEF9;">Website Development</h5>
+                            <h5 style="color: #ECEEF9;">Logo and Branding Design</h5>
                             <h5 style="color: #ECEEF9;">Powerpoint Presentation Design</h5>
                         </div>
                         <!-- Third row -->
@@ -44,19 +59,55 @@
                             <h5 style="color: #ECEEF9;">Flyer Design</h5>
                         </div>
                     </div>
-                    
-        
-                     <div>
-                        <h3 style="color: #ECEEF9; margin-top: 83px; margin-bottom: 24px; font-weight: 200; font-size: 16px;">Are you looking for help with design services?</h3>
-                        <h3 style="color: #ECEEF9; margin-top: -10px; font-weight: 100; font-size: 16px;">Please Contact us <span style="color: white; font-weight: 600; ">hello@prographr.com</span></h3>
-                     </div>
-                  </div>
-                </div>
-            
-            </div>
-    </div>
-    
 
-    
+
+                    <div>
+                        <h3
+                            style="color: #ECEEF9; margin-top: 83px; margin-bottom: 24px; font-weight: 200; font-size: 16px;">
+                            Are you looking for help with design services?</h3>
+                        <h3 style="color: #ECEEF9; margin-top: -10px; font-weight: 100; font-size: 16px;">Please Contact
+                            us <span style="color: white; font-weight: 600; ">hello@prographr.com</span></h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="effect">
+                <div class="rows">
+                    <img src="https://prographr.vercel.app/topimg/1.jpg" alt="" />
+                    <img src="https://prographr.vercel.app/topimg/2.jpg" alt="" />
+                    <img src="https://prographr.vercel.app/topimg/3.jpg" alt="" />
+                </div>
+                <div class="rows">
+                    <img src="https://prographr.vercel.app/topimg/4.jpg" alt="" />
+                    <img src="https://prographr.vercel.app/topimg/5.jpg" alt="" />
+                    <img src="https://prographr.vercel.app/topimg/6.jpg" alt="" />
+                </div>
+                <div class="rows">
+                    <img src="https://prographr.vercel.app/topimg/7.jpg" alt="" />
+                    <img src="https://prographr.vercel.app/topimg/8.jpg" alt="" />
+                    <img src="https://prographr.vercel.app/topimg/9.jpg" alt="" />
+                </div>
+                <div class="rows">
+                    <img src="https://prographr.vercel.app/topimg/10.jpg" alt="" />
+                    <img src="https://prographr.vercel.app/topimg/11.jpg" alt="" />
+                    <img src="https://prographr.vercel.app/topimg/8.jpg" alt="" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for scrolling images
+        window.onload = function () {
+            const rows = document.querySelectorAll('.rows');
+
+            rows.forEach(row => {
+                row.style.animationDuration = (row.clientHeight / 100) * 5 + 's';
+            });
+        }
+    </script>
 </body>
+
 </html>

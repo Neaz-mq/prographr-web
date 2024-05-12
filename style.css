@@ -1,55 +1,71 @@
-/* Reset default margin and padding for HTML and body */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-}
+ /* Your CSS styles here */
+        /* Reset default margin and padding for HTML and body */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+            overflow: hidden; /* Prevent scrollbar from appearing */
+        }
 
-/* Set the image width and height to fill the entire viewport */
-.hello {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire container */
-}
+        /* Set the image width and height to fill the entire viewport */
+        .hello {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire container */
+        }
 
-.contents{
-    padding-top: 40px;
-    padding-left: 90px;
-    padding-right: 60px;
-    padding-bottom: 20px;
-}
-.left{
-    display: flex;
-}
+        .contents {
+            padding: 40px 90px 20px 60px; /* Simplified padding shorthand */
+        }
 
-.background{
-    background-color: #2F1C6B;
-}
+        .left {
+            display: flex;
+            
+        }
 
-.box-container {
-    white-space: nowrap; 
-    margin-top: -16px;/* Prevents wrapping to a new line */
-}
+        .background {
+            background-color: #2F1C6B;
+        }
 
-/* Style each row */
-.row {
-    margin-bottom: -25px; 
-    font-weight: 500; 
-    
-}
+        .box-container {
+            white-space: nowrap; 
+            margin-top: -16px; /* Prevents wrapping to a new line */
+        }
 
+        /* Style each row */
+        .row {
+            margin-bottom: -25px; 
+            font-weight: 500; 
+        }
 
-/* Style each h5 element */
-.box-container h5 {
-    display: inline-block; /* Display as inline-block to be in the same row */
-    border: 1px solid white; /* Border with white color */
-    border-width: thin; /* Small border size */
-    color: white; /* Text color */
-    padding: 10px; /* Padding inside the box */
-    margin-right: 5px; /* Margin between each box */
-    border-radius: 5px; /* Rounded corners */
-    background-color: transparent; /* No background color */
-}
+        /* Style each h5 element */
+        .box-container h5 {
+            display: inline-block; /* Display as inline-block to be in the same row */
+            border: 1px solid white; /* Border with white color */
+            border-width: thin; /* Small border size */
+            color: white; /* Text color */
+            padding: 10px; /* Padding inside the box */
+            margin-right: 5px; /* Margin between each box */
+            border-radius: 5px; /* Rounded corners */
+            background-color: transparent; /* No background color */
+        }
+
+        /* Style each row */
+        .rows {
+            display: flex; /* Use flexbox to align images horizontally */
+            justify-content: space-between; /* Add space between images */
+            margin-bottom: 20px; /* Add margin between rows */
+            animation: scrollImages 20s linear infinite; /* Add animation for scrolling */
+        }
+
+        /* Style each image */
+        .rows img {
+            width: calc(33.33% - 10px); /* Set width for each image, considering margin */
+            margin-right: 10px; /* Add margin between images */
+            object-fit: cover; /* Ensure images cover the entire space */
+        }
+
+       
