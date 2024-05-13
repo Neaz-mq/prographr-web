@@ -4,74 +4,436 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="https://prographr.vercel.app/_next/static/media/icon.87854914.svg" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prographr</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css">
     <style>
-        /* Keyframes for scrolling animation */
+        /* Reset default margin and padding for HTML and body */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: 'Gellix', sans-serif;
+            font-weight: 400;
+            
+        }
+
+        /* Set the image width and height to fill the entire viewport */
+        .hello {
+            width: 100%;
+            object-fit: cover;
+            /* Ensures the image covers the entire container */
+            display: flex;
+            overflow-x: hidden;
+            /* Make it a flex container */
+        }
+
+        .background {
+            background-color: #2F1C6B;
+            width: 55%;
+            max-width: 100%;
+            /* Left side takes 50% width */
+        }
+
+        .effect {
+            width: 45%;
+            /* Right side takes 50% width */
+        }
+
+        .contents {
+            padding: 40px 90px 40px 60px;
+            /* Simplified padding shorthand */
+        }
+
+        .box-container {
+            white-space: nowrap;
+            margin-top: -16px;
+            /* Prevents wrapping to a new line */
+        }
+
+        /* Style each row */
+        .row {
+            margin-bottom: -25px;
+            font-weight: 500;
+        }
+
+        /* Style each h5 element */
+        .box-container h5 {
+            display: inline-block;
+            /* Display as inline-block to be in the same row */
+            border: 1px solid white;
+            /* Border with white color */
+            border-width: thin;
+            /* Small border size */
+            color: white;
+            /* Text color */
+            padding: 10px;
+            /* Padding inside the box */
+            margin-right: 5px;
+            /* Margin between each box */
+            border-radius: 5px;
+            /* Rounded corners */
+            background-color: transparent;
+            /* No background color */
+        }
+
+        /* Style each row */
+        .rows {
+            display: flex;
+            /* Use flexbox to align images horizontally */
+            justify-content: space-between;
+            /* Add space between images */
+            margin-bottom: 20px;
+            /* Add margin between rows */
+        }
+
+        /* Style each image */
+        .rows img {
+            width: calc(33.33% - 10px);
+            /* Set width for each image, considering margin */
+            margin-right: 10px;
+            /* Add margin between images */
+            object-fit: cover;
+            /* Ensure images cover the entire space */
+        }
+
+        .contents .provide h4 {
+                font-size: 30px;
+                margin-top: 100px;               
+            }  
+
+            .design h3 {
+            color: #ECEEF9;
+            margin-bottom: 24px;
+            font-weight: 200;
+            font-size: 12px;
+            margin-top: 40px;
+            /* Default styles */
+        }
+        
+
+        /* Keyframes for scrolling animation with smooth easing */
         @keyframes scrollImages {
             0% {
                 transform: translateY(0);
             }
 
             100% {
-                transform: translateY(-100%);
+                transform: translateY(calc(-100% - 20px));
+                /* Adjusted to include margin */
             }
+        }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 768px) {
+            html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: 'Gellix', sans-serif;
+            font-weight: 400;
+            overflow-x: hidden;
+           
+        }
+            .hello {
+                flex-direction: column;
+                /* Stack items vertically on small screens */
+            }
+
+            .background {
+                width: 100%;
+            }
+
+            .effect {
+                width: 100%;
+            }
+
+            .contents {
+                padding: 17px;
+            }
+
+            .design h3 {
+            color: #ECEEF9;
+            margin-bottom: 24px;
+            font-weight: 200;
+            font-size: 14px;
+            margin-top: 80px;
+            /* Default styles */
+        }
+
+            .box-container h5 {
+            display: inline-block;
+            /* Display as inline-block to be in the same row */
+            border: 1px solid white;
+            /* Border with white color */
+            border-width: thin;
+            /* Small border size */
+            color: white;
+            /* Text color */
+            padding: 5px;
+            /* Padding inside the box */
+            
+            /* Margin between each box */
+            border-radius: 2px;
+            /* Rounded corners */
+            background-color: transparent;
+            /* No background color */
+            font-size: 9px;
+            margin-bottom: 25px;
+        }
+
+       
+            .rows {
+                animation: none;
+                /* Disable animation on small screens */
+            }
+
+           
+            .rows img {
+                width: calc(33.33% - 10px);
+                /* Set width for each image, considering margin */
+                margin-right: 10px;
+                /* Add margin between images */
+                margin-bottom: 20px;
+                margin-top: 10px;
+                /* Add margin at the bottom of each image */
+            }
+
+    
+            
+
+            .contents .soon h1 {
+                font-size: 22px;
+                /* Smaller font size */
+                margin-top: 70px;
+                /* Adjusted margin */
+            }
+
+            .contents .provide h4 {
+                font-size: 14px;
+                margin-top: 70px;               
+            }
+
+            .hello .logo img {
+        width: 28%;
+        max-width: 100%;
+        margin-top: 40px; /* Adjust margin-top as needed */
+    }
+
+            
+            /* Reset animation on small screens */
+            @keyframes scrollImages {
+                0% {
+                    transform: translateY(0);
+                }
+
+                100% {
+                    transform: translateY(0);
+                    /* No animation on small screens */
+                }
+            }
+        }
+
+        /* Media Query for enabling animation on larger devices */
+        @media (min-width: 769px) {
+
+            html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: 'Gellix', sans-serif;
+            font-weight: 400;
+            overflow-y: hidden;
+            
+        }
+
+             /* Set the image width and height to fill the entire viewport */
+        .hello {
+            width: 100%;
+            object-fit: cover;
+            /* Ensures the image covers the entire container */
+            display: flex;
+            overflow-x: hidden;
+            /* Make it a flex container */
+        }
+
+        .design h3 {
+            color: #ECEEF9;
+            margin-bottom: 24px;
+            font-weight: 200;
+            font-size: 16px;
+            margin-top: 120px;
+            /* Default styles */
+        }
+
+
+        .background {
+            background-color: #2F1C6B;
+            width: 55%;
+            max-width: 100%;
+            /* Left side takes 50% width */
+        }
+
+        .effect {
+            width: 45%;
+            /* Right side takes 50% width */
+        }
+
+        .contents {
+            padding: 10px 70px 60px 140px;
+           
+            /* Simplified padding shorthand */
+        }
+        .box-container {
+            white-space: nowrap;
+            margin-top: -16px;
+            /* Prevents wrapping to a new line */
+        }
+
+        /* Style each row */
+        .row {
+            margin-bottom: -25px;
+            font-weight: 500;
+        }
+
+        /* Style each h5 element */
+        .box-container h5 {
+            display: inline-block;
+            /* Display as inline-block to be in the same row */
+            border: 1px solid white;
+            /* Border with white color */
+            border-width: thin;
+            /* Small border size */
+            color: white;
+            /* Text color */
+            padding: 10px;
+            /* Padding inside the box */
+            margin-right: 5px;
+            /* Margin between each box */
+            border-radius: 5px;
+            /* Rounded corners */
+            background-color: transparent;
+            /* No background color */
+        }
+
+
+            .rows {
+                animation: scrollImages linear infinite;
+                /* Add animation for scrolling on larger screens */
+            }
+
+            .contents .soon h1 {
+                font-size: 40px;
+                margin-top: 120px;               
+            }
+
+            .contents .provide h4 {
+                font-size: 16px;
+                margin-top: 120px;               
+            }
+
+
+           
+
+             /* Style each image */
+        .rows img {
+            width: calc(33.33% - 10px);
+            /* Set width for each image, considering margin */
+            margin-right: 10px;
+            /* Add margin between images */
+            object-fit: cover;
+            /* Ensure images cover the entire space */
+        }
+        
+        .hello .logo img {
+        width: 15%;
+        max-width: 100%;
+        margin-top: 60px; /* Adjust margin-top as needed */
+    }
+
+        
+
+        /* Keyframes for scrolling animation with smooth easing */
+        @keyframes scrollImages {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(calc(-100% - 20px));
+                /* Adjusted to include margin */
+            }
+        }
         }
     </style>
 </head>
 
 <body>
-
-    <div class="hello">
-        <div class="left">
+    <div class="container">
+        <div class="hello" id="hello">
+            <!-- Left side -->
             <div class="background">
                 <div class="contents">
-                    <div>
-                        <img src="./img/Prographr Logo.svg" alt="" style="width: 28%; max-width: 100%; height: auto;">
+                    <div class="logo">
+                        <img src="./img/Prographr Logo.svg" alt="" style="width: 15%;">
                     </div>
-                    <div>
-                        <h1 style="color: #ECEEF9; margin-top: 70px; font-size: 36px;">We are coming soon .</h1>
+                    <div class="soon">
+                        <h1  style="color: #ECEEF9;  ">We are coming soon .</h1>
                     </div>
 
-                    <div>
-                        <h4 style="color: #ECEEF9; margin-top: 70px; font-weight: 200; ">We are providing following
+                    <div class="provide">
+                        <h4 style="color: #ECEEF9;  font-weight: 200; ">We are providing following
                             services:</h4>
                     </div>
                     <div class="box-container">
                         <!-- First row -->
                         <div class="row">
-                            <h5 style="color: #ECEEF9;">Website Design</h5>
-                            <h5 style="color: #ECEEF9;">Illustration</h5>
-                            <h5 style="color: #ECEEF9;">Brochure Design</h5>
-                            <h5 style="color: #ECEEF9;">Infographic Design</h5>
+                            <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                    style="color: #ECEEF9; text-decoration: none;">Website Design </a></h5>
+                            <h5 style="color: #ECEEF9;"><a href="https://dribbble.com/prographr" target="_blank"
+                                    style="color: #ECEEF9; text-decoration: none;">Illustration </a></h5>
+                            <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                    style="color: #ECEEF9; text-decoration: none;">Brochure Design </a></h5>
+                            <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                    style="color: #ECEEF9; text-decoration: none;">Infographic Design</a></h5>
                         </div>
                         <!-- Second row -->
                         <div class="row">
-                            <h5 style="color: #ECEEF9;">Website Development</h5>
-                            <h5 style="color: #ECEEF9;">Logo and Branding Design</h5>
-                            <h5 style="color: #ECEEF9;">Powerpoint Presentation Design</h5>
+                            <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                    style="color: #ECEEF9; text-decoration: none;">Website Development</a></h5>
+                            <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                    style="color: #ECEEF9; text-decoration: none;">Logo and Branding Design </a></h5>
+                                    <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                        style="color: #ECEEF9; text-decoration: none;">Flyer Design </a></h5>
                         </div>
                         <!-- Third row -->
                         <div class="row">
-                            <h5 style="color: #ECEEF9;">Catalog Design</h5>
-                            <h5 style="color: #ECEEF9;">Magazine Design</h5>
-                            <h5 style="color: #ECEEF9;">Flyer Design</h5>
+                            <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                    style="color: #ECEEF9; text-decoration: none;">Catalog Design </a></h5>
+                            <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                    style="color: #ECEEF9; text-decoration: none;">Magazine Design</a></h5>
+                            
+
+                                    <h5 style="color: #ECEEF9;"> <a href="https://dribbble.com/prographr" target="_blank"
+                                        style="color: #ECEEF9; text-decoration: none;">Powerpoint Presentation Design </a>
+                                </h5>
                         </div>
                     </div>
 
-
-                    <div>
+                    <div class="design">
                         <h3
-                            style="color: #ECEEF9; margin-top: 83px; margin-bottom: 24px; font-weight: 200; font-size: 16px;">
+                            style="color: #ECEEF9;  margin-bottom: 24px; font-weight: 200; ">
                             Are you looking for help with design services?</h3>
-                        <h3 style="color: #ECEEF9; margin-top: -10px; font-weight: 100; font-size: 16px;">Please Contact
+                        <h3 style="color: #ECEEF9; margin-top: -10px; font-weight: 100; ">Please Contact
                             us <span style="color: white; font-weight: 600; ">hello@prographr.com</span></h3>
                     </div>
                 </div>
             </div>
-
-
+            <!-- Right side -->
             <div class="effect">
                 <div class="rows">
                     <img src="https://prographr.vercel.app/topimg/1.jpg" alt="" />
@@ -93,7 +455,6 @@
                     <img src="https://prographr.vercel.app/topimg/11.jpg" alt="" />
                     <img src="https://prographr.vercel.app/topimg/8.jpg" alt="" />
                 </div>
-
             </div>
         </div>
     </div>
@@ -102,12 +463,16 @@
         // JavaScript for scrolling images
         window.onload = function () {
             const rows = document.querySelectorAll('.rows');
+            const contentHeight = document.querySelector('.hello').scrollHeight;
 
             rows.forEach(row => {
-                row.style.animationDuration = (row.clientHeight / 100) * 5 + 's';
+                const rowHeight = row.clientHeight;
+                const animationDuration = ((rowHeight / contentHeight) * 100) * 1; // Reduce animation duration for faster scrolling
+                row.style.animationDuration = animationDuration + 's';
             });
         }
     </script>
+
 </body>
 
 </html>
